@@ -1,6 +1,6 @@
-# Hercules Test Analysis Agent
+# Multi-Agent Vision-Log Analyzer
 
-This agent analyzes Hercules test runs by comparing planned steps with actual execution in video recordings. It uses a multi-stage analysis process to identify gaps between planned and actual test execution.
+This tool demonstrates a sophisticated multi-agent system that combines vision analysis with log processing to verify test execution accuracy. Using a coordinated team of specialized agents - log analyzers, vision processors, and verification experts - it compares test execution logs with visual evidence (screenshots) to identify discrepancies between planned and actual test steps. The system leverages advanced language models and vision analysis to automatically detect missing steps, sequence issues, and verification gaps, providing detailed reports that help improve test coverage and reliability.
 
 ## Video Tutorials
 
