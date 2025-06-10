@@ -97,7 +97,44 @@ def get_latest_log_file(test_name: str, run_id: str) -> str:
         logger.error(f"Error getting latest log file: {str(e)}")
         raise
 
-def main(use_existing_analysis: bool = True):
+def save_final_analysis(test_name: str, run_id: str, verification_results: str):
+    """Save the final analysis results to a log file"""
+    try:
+        # Create logs directory
+        log_dir = Path("analysis_logs")
+        log_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Create filename with test_id and run_id
+        log_file = log_dir / f"final_analysis_{test_name}_{run_id}.json"
+        
+        # Extract only the verification results after </think>
+        verification_summary = []
+        found_think = False
+        for line in verification_results.split('\n'):
+            line = line.strip()
+            if '</think>' in line:
+                found_think = True
+                continue
+            if found_think and line:
+                verification_summary.append(line)
+        
+        # Prepare the analysis data
+        analysis_data = {
+            "test_name": test_name,
+            "run_id": run_id,
+            "timestamp": datetime.now().isoformat(),
+            "verification_results": "\n".join(verification_summary)
+        }
+        
+        # Save the analysis
+        with open(log_file, 'w') as f:
+            json.dump(analysis_data, f, indent=2)
+            
+        print(f"\nFinal analysis saved to: {log_file}")
+    except Exception as e:
+        logger.error(f"Error saving final analysis: {str(e)}")
+
+def main(test_name: str, run_id: str, use_existing_analysis: bool = True):
     # Initialize the log analysis agent
     log_analysis_agent = Agent(prompt_text=LOG_ANALYZER_PROMPT, agent_type="log_analyzer")
     log_analysis_agent_executor = log_analysis_agent.get_agent_executor()
@@ -106,10 +143,6 @@ def main(use_existing_analysis: bool = True):
     client = Groq(
         api_key=os.environ.get("GROQ_API_KEY"),
     )
-    
-    # Test paths for search for a product, add to cart, and verify cart contents
-    test_name = "Search_for_a_product,_add_to_cart,_and_verify_cart_contents"
-    run_id = "run_20250607_134626"
     
     # Get the most recent log file
     try:
@@ -328,8 +361,16 @@ def main(use_existing_analysis: bool = True):
             temperature=0.0
         )
         
+        verification_results = verification_completion.choices[0].message.content
         print("\nVerification Results:")
-        print(verification_completion.choices[0].message.content)
+        print(verification_results)
+        
+        # Save the final analysis
+        save_final_analysis(
+            test_name=test_name,
+            run_id=run_id,
+            verification_results=verification_results
+        )
         
     except Exception as e:
         logger.error(f"Error during cross-check analysis: {str(e)}")
@@ -337,4 +378,7 @@ def main(use_existing_analysis: bool = True):
         print("Please check the logs for details.")
 
 if __name__ == "__main__":
-    main(use_existing_analysis=True)  # Default to using existing analysis
+    # Example test name and run ID
+    test_name = "Search_for_a_product,_add_to_cart,_and_verify_cart_contents"
+    run_id = "run_20250607_134626"
+    main(test_name, run_id, use_existing_analysis=True) 

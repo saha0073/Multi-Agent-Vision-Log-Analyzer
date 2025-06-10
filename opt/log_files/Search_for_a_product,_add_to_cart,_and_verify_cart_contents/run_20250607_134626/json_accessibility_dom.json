@@ -1,0 +1,258 @@
+{
+  "tag": "body",
+  "name": "Open Menu",
+  "level": 1,
+  "children": [
+    {
+      "tag": "noscript",
+      "name": "You need to enable JavaScript to run this app.",
+      "level": 2,
+      "children": []
+    },
+    {
+      "tag": "div",
+      "name": "Open Menu",
+      "level": 2,
+      "children": [
+        {
+          "tag": "div",
+          "name": "Open Menu",
+          "level": 3,
+          "children": [
+            {
+              "tag": "div",
+              "name": "Open Menu",
+              "level": 4,
+              "children": [
+                {
+                  "tag": "div",
+                  "name": "Open Menu",
+                  "level": 5,
+                  "children": [
+                    {
+                      "tag": "div",
+                      "name": "Open Menu",
+                      "level": 6,
+                      "children": [
+                        {
+                          "tag": "div",
+                          "name": "Open Menu",
+                          "level": 7,
+                          "children": [
+                            {
+                              "tag": "div",
+                              "name": "Open Menu",
+                              "level": 8,
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "name": "Open Menu",
+                                  "level": 9,
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "name": "Open Menu",
+                                      "level": 10,
+                                      "children": [
+                                        {
+                                          "md": "1",
+                                          "tag": "button",
+                                          "role": "button",
+                                          "name": "Open Menu",
+                                          "level": 11,
+                                          "children": []
+                                        },
+                                        {
+                                          "md": "2",
+                                          "tag": "img",
+                                          "name": "Open Menu",
+                                          "level": 11,
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "name": "Swag Labs",
+                          "level": 7,
+                          "children": [
+                            {
+                              "tag": "div",
+                              "name": "Swag Labs",
+                              "level": 8,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "level": 7,
+                          "children": [
+                            {
+                              "md": "9",
+                              "tag": "a",
+                              "level": 8,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "name": "Your Cart",
+                      "level": 6,
+                      "children": [
+                        {
+                          "tag": "span",
+                          "name": "Your Cart",
+                          "level": 7,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "name": "QTYDescription",
+                  "level": 5,
+                  "children": [
+                    {
+                      "tag": "div",
+                      "name": "QTYDescription",
+                      "level": 6,
+                      "children": [
+                        {
+                          "tag": "div",
+                          "name": "QTYDescription",
+                          "level": 7,
+                          "children": [
+                            {
+                              "tag": "div",
+                              "name": "QTY",
+                              "level": 8,
+                              "children": []
+                            },
+                            {
+                              "tag": "div",
+                              "name": "Description",
+                              "level": 8,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "name": "Continue Shopping",
+                          "level": 7,
+                          "children": [
+                            {
+                              "md": "10",
+                              "tag": "button",
+                              "role": "button",
+                              "name": "Continue Shopping",
+                              "level": 8,
+                              "children": [
+                                {
+                                  "md": "11",
+                                  "tag": "img",
+                                  "name": "Go back",
+                                  "level": 9,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "md": "12",
+                              "tag": "button",
+                              "role": "button",
+                              "name": "Checkout",
+                              "level": 8,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "footer",
+              "name": "Twitter",
+              "level": 4,
+              "children": [
+                {
+                  "tag": "ul",
+                  "name": "Twitter",
+                  "level": 5,
+                  "children": [
+                    {
+                      "tag": "li",
+                      "name": "Twitter",
+                      "level": 6,
+                      "children": [
+                        {
+                          "md": "13",
+                          "tag": "a",
+                          "role": "link",
+                          "name": "Twitter",
+                          "level": 7,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "li",
+                      "name": "Facebook",
+                      "level": 6,
+                      "children": [
+                        {
+                          "md": "14",
+                          "tag": "a",
+                          "role": "link",
+                          "name": "Facebook",
+                          "level": 7,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "li",
+                      "name": "LinkedIn",
+                      "level": 6,
+                      "children": [
+                        {
+                          "md": "15",
+                          "tag": "a",
+                          "role": "link",
+                          "name": "LinkedIn",
+                          "level": 7,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "name": "\u00a9 2025 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy",
+                  "level": 5,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

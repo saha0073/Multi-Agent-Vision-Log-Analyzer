@@ -1,0 +1,142 @@
+{
+  "tag": "body",
+  "name": "Open Menu",
+  "children": [
+    {
+      "tag": "noscript",
+      "name": "You need to enable JavaScript to run this app."
+    },
+    {
+      "tag": "div",
+      "name": "Open Menu",
+      "children": [
+        {
+          "tag": "div",
+          "name": "Open Menu",
+          "children": [
+            {
+              "tag": "div",
+              "name": "Open Menu",
+              "children": [
+                {
+                  "tag": "div",
+                  "name": "Open Menu",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "name": "Open Menu",
+                      "children": [
+                        {
+                          "md": "1",
+                          "tag": "button",
+                          "role": "button",
+                          "name": "Open Menu"
+                        },
+                        {
+                          "md": "2",
+                          "tag": "img",
+                          "name": "Open Menu"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "name": "Swag Labs"
+                    },
+                    {
+                      "md": "9",
+                      "tag": "a"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "name": "Your Cart"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "name": "QTYDescription",
+              "children": [
+                {
+                  "tag": "div",
+                  "name": "QTYDescription",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "name": "QTY"
+                    },
+                    {
+                      "tag": "div",
+                      "name": "Description"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "name": "Continue Shopping",
+                  "children": [
+                    {
+                      "md": "10",
+                      "tag": "button",
+                      "role": "button",
+                      "name": "Continue Shopping",
+                      "children": [
+                        {
+                          "md": "11",
+                          "tag": "img",
+                          "name": "Go back"
+                        }
+                      ]
+                    },
+                    {
+                      "md": "12",
+                      "tag": "button",
+                      "role": "button",
+                      "name": "Checkout"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "footer",
+          "name": "Twitter",
+          "children": [
+            {
+              "tag": "ul",
+              "name": "Twitter",
+              "children": [
+                {
+                  "md": "13",
+                  "tag": "a",
+                  "role": "link",
+                  "name": "Twitter"
+                },
+                {
+                  "md": "14",
+                  "tag": "a",
+                  "role": "link",
+                  "name": "Facebook"
+                },
+                {
+                  "md": "15",
+                  "tag": "a",
+                  "role": "link",
+                  "name": "LinkedIn"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "name": "\u00a9 2025 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

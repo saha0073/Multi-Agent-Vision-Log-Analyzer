@@ -2,6 +2,18 @@
 
 This agent analyzes Hercules test runs by comparing planned steps with actual execution in video recordings. It uses a multi-stage analysis process to identify gaps between planned and actual test execution.
 
+## Video Tutorials
+
+1. [Part 1: Workflow and Multi-Agent System](https://www.loom.com/share/0803783ea9cd4a5899c0699c75c361a7?sid=c9b20281-e446-4bca-968c-0ab2d4f431bc)
+   - Explains the workflow
+   - Details of the multi-agent system
+   - How to run the analysis
+
+2. [Part 2: Running the Agent and Results](https://www.loom.com/share/84e48e740fea45b8908f955cf8463678?sid=b1081fc1-0fff-434c-9a17-56dfa72acfa4)
+   - Running with existing screenshot analysis
+   - Running without existing screenshot analysis
+   - Understanding the results
+
 ## Why Screenshots Instead of Video?
 
 The agent uses screenshots from test execution instead of video analysis for several reasons:
@@ -98,10 +110,12 @@ GROQ_API_KEY=your_groq_api_key_here
 from main import main
 
 # Run analysis using existing screenshot analysis
-main(use_existing_analysis=True)
+test_name = "Search_for_a_product,_add_to_cart,_and_verify_cart_contents"
+run_id = "run_20250607_134626"
+main(test_name, run_id, use_existing_analysis=True)
 
 # Run fresh analysis including screenshot analysis
-main(use_existing_analysis=False)
+main(test_name, run_id, use_existing_analysis=False)
 ```
 
 ## Output
@@ -127,12 +141,45 @@ The agent generates a comprehensive analysis report containing:
    - Corrected claims
    - Final summary
 
+## Sample Output
+
+Here's an example of the final analysis output (`final_analysis_{test_name}_{run_id}.json`):
+
+```json
+{
+  "test_name": "Search_for_a_product,_add_to_cart,_and_verify_cart_contents",
+  "run_id": "run_20250607_134626",
+  "timestamp": "2025-06-10T13:21:03.319488",
+  "verification_results": "VERIFICATION RESULTS:\n1. Confirmed Conclusions (with evidence):\n- Missing Login Process: The login steps (1-4) are not captured. The earliest screenshot is \"openurl_end_1749284213267076100.png\", showing the site navigation, but no login page or credentials entry.\n- Incomplete 'Add to Cart' Verification: Screenshot \"click_start_1749284317464755500.png\" shows the \"Remove\" button, implying the item was added, but lacks the 'Add to Cart' click and cart badge update.\n- Missing Cart Page Verification: No screenshot displays the detailed cart page; only the cart icon is shown.\n- Incomplete 'Remove from Cart' Process: The \"Remove\" button is present, but no screenshot shows the removal action or cart update to zero.\n- Verification Gaps: No screenshots show checks of the cart badge after actions.\n- Sequence Issues: Transition from product page to cart page is missing, disrupting the sequence.\n2. Incorrect Conclusions (with actual evidence):\n- None of the conclusions are incorrect as all are supported by the absence of specific screenshots.\n3. Final Summary:\n- Missing Login Process: Occurred between \"openurl_start_1749284212718549000.png\" and \"openurl_end_1749284213267076100.png\". Evidence before: Initial navigation; after: Product page without login.\n- 'Add to Cart' Step: Missing between product listing and cart icon. Evidence before: Product page; after: Cart icon with item.\n- Cart Page: Not shown between product page and end. Evidence before: Product page; after: Cart icon.\n- 'Remove from Cart' Action: Missing between cart icon and empty state. Evidence before: Cart icon with item; after: No item.\n- Verifications: Missing after each action. Evidence before: Action taken; after: No verification.\nAll conclusions are confirmed correct based on the provided screenshot data."
+}
+```
+
+The verification results are structured into three main sections:
+1. **Confirmed Conclusions**: Lists verified gaps and issues with specific screenshot evidence
+2. **Incorrect Conclusions**: Identifies any false positives from the initial analysis
+3. **Final Summary**: Provides a detailed breakdown of each missing step, including:
+   - When it should have occurred (between which screenshots)
+   - Evidence before and after the missing step
+   - Any partial evidence of the step being attempted
+
 ## Analysis Logs
 
-Analysis results are saved in `analysis_agent/analysis_logs/` with timestamps:
-- `video_analysis_{test_name}_{timestamp}.json`
-- Contains full screenshot analysis
-- Includes cross-check and verification results
+Analysis results are saved in `analysis_logs/` with the following files:
+
+1. Screenshot Analysis:
+   - `video_analysis_{test_name}_{run_id}.json`
+   - Contains full screenshot analysis
+   - Includes detailed captions and UI element states
+
+2. Final Analysis:
+   - `final_analysis_{test_name}_{run_id}.json`
+   - Contains complete analysis results including:
+     - Log analysis
+     - Screenshot analysis
+     - Cross-check results
+     - Verification results
+     - Timestamp of analysis
+   - This is the most comprehensive log file with all stages of analysis
 
 ## TODO
 
