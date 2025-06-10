@@ -109,12 +109,12 @@ GROQ_API_KEY=your_groq_api_key_here
 ```python
 from main import main
 
-# Run analysis using existing screenshot analysis
+# Run analysis using existing screenshot analysis (faster)
 test_name = "Search_for_a_product,_add_to_cart,_and_verify_cart_contents"
 run_id = "run_20250607_134626"
 main(test_name, run_id, use_existing_analysis=True)
 
-# Run fresh analysis including screenshot analysis
+# Run fresh analysis including screenshot analysis (slower as it creates screenshot captions)
 main(test_name, run_id, use_existing_analysis=False)
 ```
 
@@ -181,11 +181,8 @@ Analysis results are saved in `analysis_logs/` with the following files:
      - Timestamp of analysis
    - This is the most comprehensive log file with all stages of analysis
 
-## TODO
+## Future Improvements
 
-- Add more detailed error handling
 - Implement parallel screenshot analysis
 - Add support for video analysis (when cost-effective)
-- Add unit tests
-- Add integration tests
 
